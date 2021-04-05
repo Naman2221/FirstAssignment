@@ -81,6 +81,16 @@ namespace First_Assignment{
         }
      }
 
+     public void UpdateElementInList(string Key,string Value)
+     {
+         if(Map.ContainsKey(Key))
+         {
+             List<string> list=Map[Key];
+             list.Remove(Value);
+             Console.WriteLine("Enter New Value You Want To Update");
+             list.Add(TakeValueFromUser());
+         }
+     }
 
     }
 }

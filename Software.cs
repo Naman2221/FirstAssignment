@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace First_Assignment{
-    class Software:Program,IDisplaying,ISearching,IDelete{
+    class Software:Program,IDisplaying,ISearching,IDelete,IUpdate{
       
       Dictionary<string,List<string>> Map=new Dictionary<string,List<string>>();
       
@@ -81,6 +81,17 @@ namespace First_Assignment{
         {
             Console.WriteLine("Could Not Able To Delete The Element");
         }
+     }
+
+     public void UpdateElementInList(string Key,string Value)
+     {
+         if(Map.ContainsKey(Key))
+         {
+             List<string> list=Map[Key];
+             list.Remove(Value);
+             Console.WriteLine("Enter New Value You Want To Update");
+             list.Add(TakeValueFromUser());
+         }
      }
     }
 }

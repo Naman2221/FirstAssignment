@@ -19,7 +19,7 @@ interface IDelete
 
 interface IUpdate
 {
-    void UpdateElementInList(string Value);
+    void UpdateElementInList(string Key,string Value);
 }
 namespace First_Assignment
 {
@@ -89,7 +89,31 @@ namespace First_Assignment
             
         }
           
+         public void UpdateAssest(Software ObjectOfSoftware,Books ObjectOfBook,Hardware ObjectOfHardware )
+        {
+           Console.WriteLine("1.List Of Book\n2.List Of Hardware \n3.List Of Software");
+           Console.Write("Enter Your Choice-");
+           int choice=Convert.ToInt32(TakeValueFromUser());
+           Console.WriteLine("First Enter The Key And Value You Want To Remove");
+           switch (choice)
+           {
+               case 1:
+               ObjectOfBook.UpdateElementInList(TakeValueFromUser(),TakeValueFromUser());
+               break;
 
+               case 2:
+               ObjectOfHardware.UpdateElementInList(TakeValueFromUser(),TakeValueFromUser());
+               break;
+
+               case 3:
+               ObjectOfSoftware.UpdateElementInList(TakeValueFromUser(),TakeValueFromUser());
+               break;
+              
+              default:
+              Console.WriteLine("Invalid Option");
+              break;    
+           }
+        }
         
         public void DisplayingAssest(Software ObjectOfSoftware,Books ObjectOfBook,Hardware ObjectOfHardware )
         {
@@ -176,6 +200,9 @@ namespace First_Assignment
 
                  case 4:ObjectOfProgram.DeleteOpeartionInAssest(ObjectOfSoftware,ObjectOfBook,ObjectOfHardware);      
                         break; 
+
+                case 5:ObjectOfProgram.UpdateAssest(ObjectOfSoftware,ObjectOfBook,ObjectOfHardware);      
+                        break;
                }
                 value=ObjectOfProgram.ChoiceOfUser();   
             }
