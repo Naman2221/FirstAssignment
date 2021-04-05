@@ -16,6 +16,11 @@ interface IDelete
 {
     void DeleteElementFromList(string Value);
 }
+
+interface IUpdate
+{
+    void UpdateElementInList(string Value);
+}
 namespace First_Assignment
 {
     class Program 
